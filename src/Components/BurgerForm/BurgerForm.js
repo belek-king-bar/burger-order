@@ -1,12 +1,13 @@
 import React from 'react';
 import IngredientsForm from './IngredientsForm/IngredientsForm.js';
 import {availableIngredients} from "../../App";
+import { Card } from 'reactstrap';
 
 
 function BurgerForm(props) {
     return (
-        <div>
-            <h3>Current Price: {props.total} </h3>
+        <Card body inverse color="danger" className="container text-center mb-4">
+            <h4>Цена: {props.total} </h4>
             <div>
 
                 {availableIngredients.map(item => {
@@ -20,7 +21,7 @@ function BurgerForm(props) {
 
             </div>
 
-        </div>
+        </Card>
 
 
     )
