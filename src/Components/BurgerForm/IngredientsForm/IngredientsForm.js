@@ -1,14 +1,14 @@
 import React from 'react';
-import { Button, Form, FormGroup} from 'reactstrap';
+import { Button } from 'reactstrap';
 
 function IngredientsForm(props) {
-    return <Form className="container">
-        <FormGroup>
-            <p>{props.name}</p>
-            <Button disabled={props.isAddButtonDisabled} type="submit" onClick={props.Remove}>LESS</Button>
-            <Button type="submit" onClick={props.Add}>MORE</Button>
-        </FormGroup>
-    </Form>
+    return <div>
+
+            <p>{props.label}</p>
+            <Button disabled={props.isAddButtonDisabled()} type="submit" onClick={props.onChangeIngredient}>LESS</Button>
+            <Button value="add" type="submit" onClick={props.onChangeIngredient}>MORE</Button>
+
+    </div>
 }
 
 

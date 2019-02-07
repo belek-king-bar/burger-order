@@ -1,18 +1,34 @@
 import React from 'react';
-import { Form, FormGroup} from 'reactstrap';
 import IngredientsForm from './IngredientsForm/IngredientsForm.js';
+import {availableIngredients} from "../../App";
 
 
-function BurgerForm() {
-    return <Form className="container">
-        <FormGroup>
+function BurgerForm(props) {
+    return (
+        <div>
+            <h3>Current Price: {props.total} </h3>
             <div>
-                <IngredientsForm/>
+
+                {availableIngredients.map(item => {
+                    return <IngredientsForm
+                    key = {item.name}
+                    label={item.label}
+                    onChangeIngredient = {(event) => props.changeIngredient(item.name, event)}
+                    isAddButtonDisabled = {() => props.isDisabled(item.name)}
+                />
+                })}
+
             </div>
-        </FormGroup>
-    </Form>
+
+        </div>
+
+
+    )
 }
 
 
 
 export default BurgerForm;
+
+
+
