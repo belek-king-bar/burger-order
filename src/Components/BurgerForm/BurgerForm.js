@@ -6,8 +6,8 @@ import { Card } from 'reactstrap';
 
 function BurgerForm(props) {
     return (
-        <Card body inverse color="danger" className="container text-center mb-4">
-            <h4>Цена: {props.total} </h4>
+        <Card body inverse color="danger" className="container text-center mb-4 mt-4">
+            <h4 className="mb-4">Цена: {props.total} </h4>
             <div>
 
                 {availableIngredients.map(item => {
